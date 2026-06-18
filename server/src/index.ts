@@ -20,6 +20,7 @@ app.use(cors({
   origin: "http://localhost:8080",
   credentials: true,
 }));
+//Without CORS, the browser would block communication.
 
 app.use(express.json());
 
