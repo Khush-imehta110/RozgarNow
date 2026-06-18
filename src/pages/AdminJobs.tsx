@@ -43,7 +43,7 @@ const AdminJobs = () => {
       setLoading(true);
       setError("");
 
-      const res = await fetch("http://localhost:4000/api/admin/jobs", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/jobs`, {
         headers: {
           Authorization: `Bearer ${token}`, // FIXED
         },

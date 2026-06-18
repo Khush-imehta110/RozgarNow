@@ -34,12 +34,14 @@ const AdminDashboard = () => {
 
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:4000/api/admin/stats", {
-        headers: {
-          Authorization: `Bearer ${token}`, // 👈 FIXED
-        },
-      });
-
+      const res = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/admin/stats`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
       if (!res.ok) {
         throw new Error("Failed to load stats");
       }
